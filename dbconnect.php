@@ -1,12 +1,8 @@
 <?php
+    $dbServername = "localhost";
+    $dbUserName = "root";
+    $dbPassword = "";
+    $dbName = "webshop";
 
-$host = "localhost";
-$user = "root";
-$pwd = "";
-$db = "webshop";
-
-$conn = mysqli_connect($host, $user, $pwd, $db)
-    or die('Cannot connect to the database.');
-
-
-?> 
+    $conn = mysqli_connect($dbServername, $dbUserName, $dbPassword, $dbName) OR DIE("Could not connect to the database.");
+?>

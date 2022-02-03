@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<h2>HTML Forms</h2>
+<h2>Login</h2>
 
 <form action="">
   <label for="fname">Username</label><br>
@@ -15,8 +15,12 @@
   <label for="lname">Password</label><br>
   <input type="text" id="Password" name="Password"><br><br>
   <input type="submit" value="Submit">
+  <a href="Register.php">Register</a>
 </form> 
 </body>
 </html>
-</body>
-</html>
+
+<?php
+
+
+?>
