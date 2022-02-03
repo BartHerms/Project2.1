@@ -31,7 +31,8 @@ if (isset($_POST['submit'])) {
             $username = htmlentities((string)$_POST['username']);
             $email = htmlentities((string)$_POST['email']);
             $password = htmlentities((string)$_POST['passsword']);
-            storeValues($conn, $username, $email, $password);
+            $hashedPassword = password_hash($_POST['passsword'], PASSWORD_DEFAULT);
+            storeValues($conn, $username, $email, $hashedPassword);
         } else {
           echo "no password given";
         }
@@ -43,14 +44,14 @@ if (isset($_POST['submit'])) {
   }
 }
 
-function storeValues($conn, string $username, string $email, string $password)
+function storeValues($conn, string $username, string $email, string $hashedPassword)
     {
         $query = "INSERT INTO registration (username, email, passsword) VALUES (
             ?,?,?
         );";
 
         $stmt = mysqli_prepare($conn, $query) or die(mysqli_error($conn));
-        mysqli_stmt_bind_param($stmt, 'sss', $username, $email, $password);
+        mysqli_stmt_bind_param($stmt, 'sss', $username, $email, $hashedPassword);
 
         mysqli_stmt_execute($stmt) or die(mysqli_error($conn));
 
@@ -58,7 +59,7 @@ function storeValues($conn, string $username, string $email, string $password)
         mysqli_close($conn);
 
         echo "Account created! <br>";
-        header('Location: index.php');
+
     }
 
 ?>
