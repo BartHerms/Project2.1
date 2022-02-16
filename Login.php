@@ -1,3 +1,7 @@
+<?php include_once 'dbconnect.php' ?>
+<?php include_once 'LoginHelper.php' ?>
+<?php include_once 'header.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +13,12 @@
 <body>
 <h2>Login</h2>
 
-<form action="">
-  <label for="fname">Username</label><br>
-  <input type="text" id="Username" name="Username"><br>
-  <label for="lname">Password</label><br>
-  <input type="text" id="Password" name="Password"><br><br>
-  <input type="submit" value="Submit">
+<form action="LoginHelper.php" method="POST">
+  <label for="email">E-mail</label><br>
+  <input type="text" id="email" name="email" required><br>
+  <label for="password">Password</label><br>
+  <input type="text" id="password" name="password" required><br><br>
+  <input type="submit" value="login" name="submit">
   <a href="Register.php">Register</a>
 </form> 
 </body>
@@ -22,5 +26,9 @@
 
 <?php
 
+$sql = "SELECT email, password FROM registration";
+$result = mysqli_query($conn, $sql);
+
+mysqli_close($conn);
 
 ?>

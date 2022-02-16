@@ -11,14 +11,13 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Hey ! welcome to main page .</h1>
+    
 </body>
 </html>
 
-<?php 
+<?php
 session_start ();
 if(!isset($_SESSION["login"]))
 
 	header("location:index.php"); 
 ?>
-

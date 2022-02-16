@@ -1,4 +1,5 @@
 <?php include_once 'dbconnect.php' ?>
+<?php include_once 'header.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +18,9 @@
   <label for="e-mail">E-mail</label><br>
   <input type="text" id="email" name="email" required><br>
   <label for="password">Password</label><br>
-  <input type="text" id="passsword" name="passsword" required><br><br>
+  <input type="text" id="password" name="password" required><br><br>
   <input type="submit" name="submit" value="submit">
+  <a href="Login.php">Login now</a>
 </form> 
 
 
@@ -27,11 +29,11 @@
 if (isset($_POST['submit'])) {
   if (!empty($_POST['username'])) {
     if (!empty($_POST['email'])) {
-        if (!empty($_POST['passsword'])) {
+        if (!empty($_POST['password'])) {
             $username = htmlentities((string)$_POST['username']);
             $email = htmlentities((string)$_POST['email']);
-            $password = htmlentities((string)$_POST['passsword']);
-            $hashedPassword = password_hash($_POST['passsword'], PASSWORD_DEFAULT);
+            $password = htmlentities((string)$_POST['password']);
+            $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
             storeValues($conn, $username, $email, $hashedPassword);
         } else {
           echo "no password given";
@@ -46,7 +48,7 @@ if (isset($_POST['submit'])) {
 
 function storeValues($conn, string $username, string $email, string $hashedPassword)
     {
-        $query = "INSERT INTO registration (username, email, passsword) VALUES (
+        $query = "INSERT INTO registration (username, email, password) VALUES (
             ?,?,?
         );";
 

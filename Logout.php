@@ -1,7 +1,3 @@
-<?php include_once 'dbconnect.php' ?>
-<?php include_once 'LoginHelper.php' ?>
-<?php include_once 'header.php' ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Hey ! welcome to main page .</h1>
+    
 </body>
 </html>
 
-<?php 
+<?php
 session_start ();
-if(!isset($_SESSION["login"]))
-
-	header("location:index.php"); 
+session_destroy();
+header("location:index.php")
 ?>
-

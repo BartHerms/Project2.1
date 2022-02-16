@@ -14,7 +14,8 @@
         <ul>
             <li><a href="#home">NHL WEBSHOP</a></li>
             <li><input type="text" placeholder="Zoeken.."></li>
-            <li><a href="#login">Login</a></li>
+            <li><a href="Login.php">Login</a></li>
+            <li><a href="Logout.php">Logout</a></li>
         </ul>
     </div>
 </body>
