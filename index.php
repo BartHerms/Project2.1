@@ -1,4 +1,8 @@
-<?php session_start (); ?>
+<?php session_start (); 
+if(!isset($_SESSION["login"]))
+
+header("location:index.php");
+?>
 <?php include_once 'dbconnect.php' ?>
 <?php include_once 'LoginHelper.php' ?>
 <?php include_once 'header.php' ?>
@@ -17,8 +21,6 @@
 </html>
 
 <?php
-if(!isset($_SESSION["login"]))
-
-	header("location:index.php"); 
+ 
 ?>
 

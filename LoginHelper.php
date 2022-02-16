@@ -20,24 +20,59 @@
 
 if(isset($_REQUEST['submit']))
 {
-$userName = $_REQUEST['email'];
+$userEmail = $_REQUEST['email'];
 $userPassword = $_REQUEST['password'];
 
-$res = mysqli_query("select* from registration where username='$userName'and userpassword='$userPassword'");
-$result=mysqli_fetch_array($res);
+
+$res = "SELECT password FROM registration WHERE email = ?";
+         $statement = mysqli_prepare($conn, $res);
+         mysqli_stmt_bind_param($statement, "s", $userEmail);
+         mysqli_stmt_execute($statement);
+         mysqli_stmt_bind_result($statement, $userPasswordDB);
+         mysqli_stmt_store_result($statement);
+         echo (mysqli_stmt_error($statement));
+$result =  mysqli_stmt_fetch($statement);
+echo $userPasswordDB;
 if($result)
 {
 	
 	$_SESSION["login"]="1";
 	header("location:index.php");
+    // echo "succes";
 }
 else	
 {
 	header("location:login.php?err=1");
+    // echo "fail";
 	
 }
 }
 
+// $sqlresult = "SELECT email, password FROM registration";
+//         $result = mysqli_prepare($conn, $sqlresult);
+//         mysqli_stmt_bind_param($result, "ss", $userEmail);
+//         mysqli_stmt_execute($result);
+//         mysqli_stmt_bind_result($result, $userEmail, $userPassword);
+//         mysqli_stmt_store_result($result);
 
 
+
+// if (mysqli_stmt_num_rows($result) == 1) {
+//     while (mysqli_stmt_fetch($result)) {
+//        
+//         if (password_verify($userPassword, $password)) {
+//             $_SESSION['userId'] = $id;
+//             $_SESSION['email'] = $userEmail;
+//             header("location: index.php");
+//             exit;
+//            
+//         } else {
+//             $error = $lang['wrongPassword'];
+//         }
+//     }
+//     
+// } else {
+//     $error = $lang['wrongPassword'];
+// }
+// }
 ?>

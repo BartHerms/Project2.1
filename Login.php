@@ -26,9 +26,18 @@
 
 <?php
 
-$sql = "SELECT email, password FROM registration";
-$result = mysqli_query($conn, $sql);
+// $sql = "SELECT email, password FROM registration";
+// $result = mysqli_query($conn, $sql);
 
-mysqli_close($conn);
+// mysqli_close($conn);
 
+if(isset($_REQUEST["err"]))
+$msg="Invalid username or Password";
+?>
+<p style="color:red;">
+<?php if(isset($msg))
+{
+	
+echo $msg;
+}
 ?>
