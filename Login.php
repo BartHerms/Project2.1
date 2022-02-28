@@ -31,7 +31,7 @@
 
 // mysqli_close($conn);
 
-if(isset($_REQUEST["err"]))
+if(isset($_REQUEST["error"]))
 $msg="Invalid username or Password";
 ?>
 <p style="color:red;">

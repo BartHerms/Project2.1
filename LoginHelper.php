@@ -1,4 +1,4 @@
-<?php session_start (); ?>
+
 <?php include_once 'dbconnect.php' ?>
 <?php include_once 'header.php' ?>
 
@@ -32,18 +32,18 @@ $res = "SELECT password FROM registration WHERE email = ?";
          mysqli_stmt_store_result($statement);
          echo (mysqli_stmt_error($statement));
 $result =  mysqli_stmt_fetch($statement);
-echo $userPasswordDB;
+
 if($result)
 {
-	
+	session_start (); 
 	$_SESSION["login"]="1";
 	header("location:index.php");
     // echo "succes";
 }
 else	
 {
-	header("location:login.php?err=1");
-    // echo "fail";
+	header("location:Login.php?error=1");
+    echo "fail";
 	
 }
 }

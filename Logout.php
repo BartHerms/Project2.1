@@ -7,7 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+    je bent nu uitgelogd, terug naar de hoofdpagina?
+    <ul>
+            <li><a href="index.php">NHL WEBSHOP</a></li>
+    </ul>
 </body>
 </html>
 
