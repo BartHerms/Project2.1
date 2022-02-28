@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NHL Webshop</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Mijn account</title>
 </head>
 
 <body>
@@ -18,6 +17,3 @@
             <li><a href="Logout.php">Logout</a></li>
         </ul>
     </div>
-</body>
-
-</html>
