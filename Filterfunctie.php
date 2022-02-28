@@ -11,7 +11,9 @@
         <!-- <?php include "header"; ?> -->
         <div class="sub-container">
             <!-- <?php include "container"; ?> -->
+
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="product-sort">
+            <h2> Found products </h2>
                 <label for="sort">Sorteer producten</label>
                 <select name="sort" id="sort">
                     <option value="all" <?php echo (!isset($_POST['sort']) == 'all') ? "selected" : ""; ?>>Alle Producten</option>
