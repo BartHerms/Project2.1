@@ -1,5 +1,6 @@
-<?php include_once 'dbconnect.php' ?>
-<?php include_once 'LoginHelper.php' ?>
+<?php include_once './src/dbconnect.php' ?>
+<?php include_once './src/LoginHelper.php' ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

@@ -4,9 +4,8 @@ if (!isset($_SESSION["userEmail"]))
     // header("location:index.php");
     // echo $_SESSION["login"];
 ?>
-<?php include_once '../src/dbconnect.php' ?>
-<?php include_once 'LoginHelper.php' ?>
-
+<?php include_once './src/dbconnect.php' ?>
+<?php include_once './src/LoginHelper.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +27,7 @@ if (!isset($_SESSION["userEmail"]))
         <th>Price</th>
     </table>
     <?php fetchValues($conn); ?>
+    <?php include_once '../public/footer.php' ?>
 </body>
 
 </html>
@@ -58,4 +58,3 @@ function fetchValues($conn)
     mysqli_close($conn);
 }
 ?>
-<?php include_once '../public/footer.php' ?>
