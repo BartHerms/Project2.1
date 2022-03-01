@@ -1,5 +1,8 @@
+<?php session_start (); 
+if(!isset($_SESSION["userEmail"])) ?>
 <?php include_once './src/dbconnect.php' ?>
 <?php include_once './src/LoginHelper.php' ?>
+<?php include_once 'header.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
