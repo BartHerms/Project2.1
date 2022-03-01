@@ -27,10 +27,10 @@ if (!isset($_SESSION["userEmail"]))
         <th>Price</th>
     </table>
     <?php fetchValues($conn); ?>
-    <?php include_once '../public/footer.php' ?>
 </body>
 
 </html>
+
 
 <?php
 function fetchValues($conn)
