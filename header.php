@@ -16,6 +16,7 @@
             <li><input type="text" placeholder="Zoeken.."></li>
             <li><a href="Login.php">Login</a></li>
             <li><a href="Logout.php">Logout</a></li>
+            <li><a href="cart.php">Cart</a></li>
         </ul>
     </div>
 </body>

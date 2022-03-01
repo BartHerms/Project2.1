@@ -1,7 +1,8 @@
 <?php session_start (); 
-if(!isset($_SESSION["login"]))
+if(!isset($_SESSION["userEmail"]))
 
 // header("location:index.php");
+// echo $_SESSION["login"];
 ?>
 <?php include_once 'dbconnect.php' ?>
 <?php include_once 'LoginHelper.php' ?>

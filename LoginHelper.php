@@ -28,25 +28,44 @@ $res = "SELECT password FROM registration WHERE email = ?";
          $statement = mysqli_prepare($conn, $res);
          mysqli_stmt_bind_param($statement, "s", $userEmail);
          mysqli_stmt_execute($statement);
-         mysqli_stmt_bind_result($statement, $userPasswordDB);
+         mysqli_stmt_bind_result($statement, $password);
          mysqli_stmt_store_result($statement);
          echo (mysqli_stmt_error($statement));
-$result =  mysqli_stmt_fetch($statement);
+// $result =  mysqli_stmt_fetch($statement);
 
-if($result)
-{
-	session_start (); 
-	$_SESSION["login"]="1";
-	header("location:index.php");
-    // echo "succes";
+
+if (mysqli_stmt_num_rows($statement) == 1) {
+    while (mysqli_stmt_fetch($statement)) {
+        // If login information is correct, redirect to homepage.
+        if (password_verify($userPassword, $password)) {
+            $_SESSION['userEmail'] = $userEmail;
+          //  $_SESSION['userpassword'] = $userPassword;
+            header("location: index.php");
+        }
+        else {
+            header("location:Login.php?error=1");
+             echo "fail";
+                
+            }
+        }
+    }
 }
-else	
-{
-	header("location:Login.php?error=1");
-    echo "fail";
+// if(isset($result))
+// // password_verify(string $userPassword, string $result): bool
+//  {
+// 	session_start (); 
+// 	$_SESSION["login"]="1";
+// 	// header("location:index.php");
+//     echo "succes";
+    
+//  }
+//  else	
+//  {
+// 	header("location:Login.php?error=1");
+//     echo "fail";
 	
-}
-}
+//  }
+// }
 
 // $sqlresult = "SELECT email, password FROM registration";
 //         $result = mysqli_prepare($conn, $sqlresult);
@@ -57,22 +76,18 @@ else
 
 
 
-// if (mysqli_stmt_num_rows($result) == 1) {
-//     while (mysqli_stmt_fetch($result)) {
-//        
-//         if (password_verify($userPassword, $password)) {
-//             $_SESSION['userId'] = $id;
-//             $_SESSION['email'] = $userEmail;
-//             header("location: index.php");
-//             exit;
-//            
-//         } else {
-//             $error = $lang['wrongPassword'];
-//         }
-//     }
-//     
-// } else {
-//     $error = $lang['wrongPassword'];
-// }
-// }
+ //if (mysqli_stmt_num_rows($result) == 1) {
+ //    while (mysqli_stmt_fetch($result)) {
+        
+ //        if (password_verify($userPassword, $password)) {
+            // $_SESSION['userId'] = $id;
+  //           $_SESSION["login"]="1";
+            // $_SESSION['email'] = $userEmail;
+ //            header("location: index.php");
+  //           exit;
+             // else	
+ //       }
+ //   } 
+// } 
+         
 ?>
