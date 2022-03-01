@@ -19,7 +19,7 @@
 
 
 
-  <h2>Login</h2>
+  <h1>Login</h1>
 
   <form action="LoginHelper.php" method="POST">
     <label for="email">E-mail</label><br>
