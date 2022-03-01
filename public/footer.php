@@ -1,3 +1,5 @@
-<?php
-echo "<p>Copyright &copy;  " . date("Y") . " NHL Stenden</p>";
-?>
+<footer>
+    <div class="footer">
+        <p>Copyright &copy; 2022</p>
+    </div>
+</footer>

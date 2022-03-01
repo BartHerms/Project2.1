@@ -1,4 +1,5 @@
-<?php include_once '../src/db_products.php' ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,11 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NHL Webshop Account</title>
+    <link rel="stylesheet" href="../assets/css/home.css">
 </head>
 
 <body>
     <?php include 'header.php'; ?>
-
+    <?php if($_GET["addProduct"]) {
+        echo "<h1>Product has been succesfully added!</h1>";
+    } ?>
     <h1>Add Product</h1>
 
     <form action="../src/addproduct.php" method="post">
