@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    <?php include 'header.php'; ?>
+    <?php include '../public/header.php'; ?>
     <?php if($_GET["addProduct"]) {
         echo "<h1>Product has been succesfully added!</h1>";
     } ?>
     <h1>Add Product</h1>
 
-    <form action="../src/addproduct.php" method="post">
+    <form action="addproduct.php" method="post">
         <p>
             <label for="Title">Title:</label>
             <input type="text" name="Title" id="Title">
@@ -36,7 +36,7 @@
         <input type="submit" value="Submit">
 
 
-        <?php include_once 'footer.php' ?>
+        <?php include_once '../public/footer.php' ?>
 </body>
 
 </html>
