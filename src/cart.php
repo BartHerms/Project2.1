@@ -26,7 +26,9 @@ if (!isset($_SESSION["userEmail"]))
         <th>Amount</th>
         <th>Price</th>
     </table>
+    <?php include_once '../public/footer.php' ?>
     <?php fetchValues($conn); ?>
+    
 </body>
 
 </html>
