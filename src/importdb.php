@@ -53,7 +53,7 @@ if(isset($_POST["import"]))
 <!DOCTYPE html>  
 <html>  
  <head>  
-  <title>How to Import SQL File in Mysql Database using PHP</title>  
+  <title>Import SQL File in Mysql Database using PHP</title>  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
@@ -61,7 +61,7 @@ if(isset($_POST["import"]))
  <body>  
   <br /><br />  
   <div class="container" style="width:700px;">  
-   <h3 align="center">How to Import SQL File in Mysql Database using PHP</h3>  
+   <h3 align="center">Import SQL File in Mysql Database using PHP</h3>  
    <br />
    <div><?php echo $message; ?></div>
    <form method="post" enctype="multipart/form-data">
