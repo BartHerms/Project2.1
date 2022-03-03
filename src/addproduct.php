@@ -22,7 +22,7 @@ die("Something went wrong with preparing the statement \n" . mysqli_error($conn)
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
 
-header("Location:../public/admin.php?addProduct=true")
+header("Location:../src/admin.php?addProduct=true")
 
 
 ?>
