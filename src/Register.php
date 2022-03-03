@@ -3,14 +3,19 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../assets/css/home.css">
+
 </head>
+
 <body>
-<h2>Register Account</h2>
+  <?php include_once '../public/header.php' ?>
+  <h2>Register Account</h2>
 
 <form action="<?= htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
   <label for="username">Username</label><br>
@@ -26,7 +31,7 @@
 </form> 
 
 
-<?php
+  <?php
 
 if (isset($_POST['submit'])) {
   if (!empty($_POST['username'])) {
@@ -42,8 +47,11 @@ if (isset($_POST['submit'])) {
         } else {
           echo "no password given";
         }
+      } else {
+        echo "no e-mail given";
+      }
     } else {
-      echo "no e-mail given";
+      echo "no username given";
     }
   } else {
     echo "no age given";
@@ -65,14 +73,16 @@ function storeValues($conn, string $username, string $age, string $email, string
 
         mysqli_stmt_execute($stmt) or die(mysqli_error($conn));
 
-        mysqli_stmt_close($stmt);
-        mysqli_close($conn);
+    mysqli_stmt_execute($stmt) or die(mysqli_error($conn));
 
-        echo "Account created! <br>";
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
 
-    }
+    echo "Account created! <br>";
+  }
 
-?>
-
+  ?>
+  <?php include_once 'footer.php' ?>
 </body>
+
 </html>
