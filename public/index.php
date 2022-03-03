@@ -65,6 +65,7 @@ if(!isset($_SESSION["userEmail"])) ?>
                 } 
             }
             else {echo "No post done yet";}
+            ?>
     </div>
 
 
