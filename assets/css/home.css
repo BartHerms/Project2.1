@@ -11,6 +11,15 @@
 .topnav {
   background-color: rgb(65, 147, 220);
   overflow: hidden;
+  padding-left: 600px;
+  padding-right: 600px;
+}
+.Zoek{
+  float: left;
+  width: 250px;
+  height: 35px;
+  padding: 0px;
+  font-size: 17px;
 }
 
 /* Style the links inside the navigation bar */
@@ -27,6 +36,12 @@
 .topnav li {
   display: block;
   list-style: none;
+}
+
+.topnav input[type=text]{
+  padding: 6px;
+  margin-top: 6px;
+  font-size: 17px;
 }
 
 /* Change the color of links on hover */
