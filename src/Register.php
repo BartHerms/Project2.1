@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
     echo "no age given";
   }
 }
-}
+
 
 // } else {
 //  echo "no username given"
