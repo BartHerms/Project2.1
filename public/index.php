@@ -65,9 +65,6 @@ if(!isset($_SESSION["userEmail"])) ?>
                 } 
             }
             else {echo "No post done yet";}
-            ?>
-        </div>
-        <?php /*if (mysqli_stmt_num_rows($statement) > 0): */?>
     </div>
 
 
