@@ -12,7 +12,7 @@
 
 <body>
     <?php include_once '../public/header.php' ?>
-    Je bent nu uitgelogd, terug naar de hoofdpagina?
+    You are logged out now, return to the main page?
     <ul>
         <li><a href="../public/index.php">NHL WEBSHOP</a></li>
     </ul>

@@ -17,7 +17,7 @@ if(!isset($_SESSION["userEmail"])) ?>
 
 <body>
     <?php include_once 'header.php' ?>
-
+    
     <h1> Found Products </h1>
 
     <?php include_once 'footer.php' ?>

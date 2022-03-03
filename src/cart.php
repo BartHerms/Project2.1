@@ -44,16 +44,32 @@ function fetchValues($conn)
     mysqli_stmt_store_result($stmt);
     if (mysqli_stmt_num_rows($stmt) > 0) {
         while (mysqli_stmt_fetch($stmt)) {
-           // $prodTotal = $prodPrice;
-           // echo $prodTotal;
-           // $prodTotal = 0;
-           // $prodTotal += $prodPrice['price'];
            
             echo '
             <tr>
             <th>' . $prodName . '</th>
-            
             <th>' . $prodPrice . '</th>
+            <br> </br>
+            </tr>';
+        }
+    }
+    // echo $prodTotal;
+   // mysqli_stmt_close($stmt);
+   // mysqli_close($conn);
+}
+
+{
+    $sql2 = "SELECT sum(price) FROM products";
+    $stmt = mysqli_prepare($conn, $sql2) or die(mysqli_error($conn));
+    mysqli_stmt_execute($stmt) or die(mysqli_error($conn));
+    mysqli_stmt_bind_result($stmt, $prodTotal);
+    mysqli_stmt_store_result($stmt);
+    if (mysqli_stmt_num_rows($stmt) > 0) {
+        while (mysqli_stmt_fetch($stmt)) {
+           
+            echo '
+            <tr>
+            <th>' . $prodTotal . '</th>
             <br> </br>
             </tr>';
         }
@@ -61,7 +77,11 @@ function fetchValues($conn)
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 }
+
+
 ?>
 
 <!-- <th>' . $prodAmount . '</th>
     <th><a href="editAmount.php?id=' . $prodAmount . '"> Link</a></th> -->
+
+    
