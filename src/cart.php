@@ -4,8 +4,8 @@ if (!isset($_SESSION["userEmail"]))
     // header("location:index.php");
     // echo $_SESSION["login"];
 ?>
-<?php include_once './src/db_products.php' ?>
-<?php include_once './src/LoginHelper.php' ?>
+<?php include_once '../src/db_products.php' ?>
+<?php include_once '../src/LoginHelper.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">

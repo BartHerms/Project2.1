@@ -1,6 +1,5 @@
 
-<?php include_once './src/db_products.php' ?>
-<?php include_once './src/LoginHelper.php' ?>
+<?php include_once '../src/db_products.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +39,7 @@ if (mysqli_stmt_num_rows($statement) == 1) {
         if (password_verify($userPassword, $password)) {
             $_SESSION['userEmail'] = $userEmail;
           //  $_SESSION['userpassword'] = $userPassword;
-            header("location: index.php");
+            header("location: ../public/index.php");
         }
         else {
             header("location:Login.php?error=1");

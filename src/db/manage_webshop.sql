@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Gegenereerd op: 03 mrt 2022 om 10:52
--- Serverversie: 10.4.21-MariaDB
--- PHP-versie: 8.1.2
+-- Host: 127.0.0.1
+-- Gegenereerd op: 03 mrt 2022 om 11:29
+-- Serverversie: 10.4.20-MariaDB
+-- PHP-versie: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,6 +58,28 @@ INSERT INTO `products` (`title`, `description`, `category`, `price`, `id`) VALUE
 ('iPhone 13 Pro Max', 'Gewoon een nog betere iPhone die er is maar dan nog iets groter', 'Phones', 1099, 5),
 ('iPhone 12 ', 'Een oude iPhone', 'Phones', 799, 26);
 
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `registration`
+--
+
+CREATE TABLE `registration` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `age` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `registration`
+--
+
+INSERT INTO `registration` (`id`, `username`, `email`, `password`, `age`) VALUES
+(1, 'Bart', 'bartherms@gmail.com', '$2y$10$CdI1uSxNh1Dp7V93gdK23OVb5JHmgt7S29iFTO.uxLPQ7IbJh7HxG', 0),
+(2, 'Bart', 'bartherms@gmail.com2', '$2y$10$Jn9vYTy3NvrwFi7qVS0WJ.mmjs/wHIJ7ngblUEntdWukh6OmqVJPa', 22);
+
 --
 -- Indexen voor geëxporteerde tabellen
 --
@@ -75,6 +97,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexen voor tabel `registration`
+--
+ALTER TABLE `registration`
+  ADD PRIMARY KEY (`id`,`email`);
+
+--
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
@@ -89,6 +117,12 @@ ALTER TABLE `discount`
 --
 ALTER TABLE `products`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT voor een tabel `registration`
+--
+ALTER TABLE `registration`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
