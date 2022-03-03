@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Gegenereerd op: 03 mrt 2022 om 10:52
+-- Gegenereerd op: 03 mrt 2022 om 10:56
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.1.2
 
