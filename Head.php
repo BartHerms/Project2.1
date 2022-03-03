@@ -19,9 +19,9 @@
         //$itemname= 
         $search = $_POST['Search'];
 
-        $servername = "localhost";
+        $servername = "db_products";
         $itemname = "item";
-        $price="$200,-";
+        $price="€200,-";
 
         $conn = new mysqli($servername, $itemname);
         
