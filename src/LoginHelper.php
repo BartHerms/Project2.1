@@ -35,7 +35,6 @@ $res = "SELECT password FROM registration WHERE email = ?";
 
 if (mysqli_stmt_num_rows($statement) == 1) {
     while (mysqli_stmt_fetch($statement)) {
-        // If login information is correct, redirect to homepage.
         if (password_verify($userPassword, $password)) {
             $_SESSION['userEmail'] = $userEmail;
           //  $_SESSION['userpassword'] = $userPassword;
