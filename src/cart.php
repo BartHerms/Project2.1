@@ -44,8 +44,8 @@ function fetchValues($conn)
     mysqli_stmt_store_result($stmt);
     if (mysqli_stmt_num_rows($stmt) > 0) {
         while (mysqli_stmt_fetch($stmt)) {
-            $prodTotal = 0;
-            $prodTotal += $prodPrice['price'];
+           // $prodTotal = 0;
+           // $prodTotal += $prodPrice['price'];
            
             echo '
             <tr>
@@ -54,7 +54,6 @@ function fetchValues($conn)
             <th>' . $prodPrice . '</th>
             <br> </br>
             <th>Total</th>
-            <th>' . $prodTotal . '</th>
             </tr>';
         }
     }
