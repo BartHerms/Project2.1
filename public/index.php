@@ -74,7 +74,6 @@ if(!isset($_SESSION["userEmail"])) ?>
         <th><b>prodcut name</b></th>
         <th><b>product price</b></th>
         <th><b>product category</b></th>
-        <th>click here for more info</th>
         </tr>
         <?php
 
