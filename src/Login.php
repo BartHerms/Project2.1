@@ -25,7 +25,7 @@
     <label for="email">E-mail</label><br>
     <input type="text" id="email" name="email" required><br>
     <label for="password">Password</label><br>
-    <input type="text" id="password" name="password" required><br><br>
+    <input type="password" id="password" name="password" required><br><br>
     <input type="submit" value="login" name="submit">
     <a href="Register.php">Register</a>
   </form>
