@@ -69,6 +69,7 @@ function fetchValues($conn)
            
             echo '
             <tr>
+            <th> total </th>
             <th>' . $prodTotal . '</th>
             <br> </br>
             </tr>';
