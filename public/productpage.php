@@ -20,12 +20,13 @@ if(!isset($_SESSION["userEmail"])) ?>
         $prodPrice=$_GET["price"];
         $prodDescription=$_GET["description"];
       //  echo "src='productpage.php/$prodId'";
+        echo " product name <th>"; 
         echo $prodTitle;
-        echo "<br>"; 
+        echo " <br>product price <th>"; 
         echo $prodPrice;
-        echo "<br>"; 
-        echo $prodId;
-        echo "<br>"; 
+      //  echo "<br>"; 
+      //  echo $prodId;
+        echo "<br> description <th>"; 
         echo $prodDescription;
         
 
