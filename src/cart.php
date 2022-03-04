@@ -35,6 +35,9 @@ if (!isset($_SESSION["userEmail"]))
 
 
 <?php
+
+// kart geeft voor nu alle producten weer, niet degene die aan users gekoppeld zijn
+
 function fetchValues($conn)
 {
     $sql = "SELECT title, price FROM products";
