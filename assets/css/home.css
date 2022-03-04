@@ -11,13 +11,10 @@
 .topnav {
   background-color: rgb(65, 147, 220);
   overflow: hidden;
-  padding-left: 600px;
-  padding-right: 600px;
 }
 .Zoek{
   float: left;
-  width: 250px;
-  height: 35px;
+  width: 175px;
   padding: 0px;
   font-size: 17px;
 }
