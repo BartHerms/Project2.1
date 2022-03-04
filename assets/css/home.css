@@ -40,6 +40,30 @@
   margin-top: 6px;
   font-size: 17px;
 }
+/* Change the linkson hopepage */
+
+.cata{
+  display: inline;
+  list-style-type: none;
+}
+
+.cata li{
+  display: flex;
+  float:left;
+  font-size: larger;
+  text-decoration: none;
+}
+
+.cata a:link {
+  color: black;  
+  font-size: x-large;
+}
+
+.cata a:visited {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
 
 /* Change the color of links on hover */
 .topnav a:hover {
