@@ -69,34 +69,38 @@ if(!isset($_SESSION["userEmail"])) ?>
     </div>
 
 
+    <table>
+        <tr>
+        <th><b>prodcut name</b></th>
+        <th><b>product price</b></th>
+        <th><b>product category</b></th>
+        <th>click here for more info</th>
+        </tr>
+        <?php
+
+        $sql = "SELECT title, price, description, category, id FROM products";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_execute($stmt) or die(mysqli_error($conn));
+        mysqli_stmt_bind_result($stmt, $prodTitle, $prodPrice, $prodDescription, $prodCategory, $prodId);
+        mysqli_stmt_store_result($stmt);
+        if (mysqli_stmt_num_rows($stmt) > 0) {
+            while (mysqli_stmt_fetch($stmt)) {
+                echo "<tr> 
+                <th> $prodTitle</th>
+                <th> $prodPrice</th>
+                <th> $prodCategory</th>
+                <th> <a href ='productpage.php?id=$prodId&title=$prodTitle&price=$prodPrice&description=$prodDescription'> meer info </a></th> 
+               
+                
+                
+                </tr>";
+            }
+        }
+        ?>
+    </table>
+
     <?php include_once 'footer.php' ?>
-    <?php fetchValues($conn); ?>
 </body>
 
 </html>
 
-<?php
-function fetchValues($conn)
-{
-    $sql = "SELECT title, description, category, price FROM products";
-    $stmt = mysqli_prepare($conn, $sql) or die(mysqli_error($conn));
-    mysqli_stmt_execute($stmt) or die(mysqli_error($conn));
-    mysqli_stmt_bind_result($stmt, $prodName, $prodDescription, $prodCategory, $prodPrice);
-    mysqli_stmt_store_result($stmt);
-    if (mysqli_stmt_num_rows($stmt) > 0) {
-        while (mysqli_stmt_fetch($stmt)) {
-           
-            echo '
-            <tr>
-            <th>' . $prodName . '</th>
-            <th>' . $prodDescription . '</th>
-            <th>' . $prodCategory . '</th>
-            <th>' . $prodPrice . '</th>
-            <br> </br>
-            </tr>';
-        }
-    }
-    mysqli_stmt_close($stmt);
-    mysqli_close($conn);
-}
-?>
