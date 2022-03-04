@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 03 mrt 2022 om 11:29
+-- Gegenereerd op: 04 mrt 2022 om 14:30
 -- Serverversie: 10.4.20-MariaDB
 -- PHP-versie: 8.0.9
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `manage_webshop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `cart`
+--
+
+CREATE TABLE `cart` (
+  `product_id` int(255) NOT NULL,
+  `product_title` varchar(255) NOT NULL,
+  `product_price` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -83,6 +96,12 @@ INSERT INTO `registration` (`id`, `username`, `email`, `password`, `age`) VALUES
 --
 -- Indexen voor geëxporteerde tabellen
 --
+
+--
+-- Indexen voor tabel `cart`
+--
+ALTER TABLE `cart`
+  ADD UNIQUE KEY `product_id` (`product_id`,`email`);
 
 --
 -- Indexen voor tabel `discount`
